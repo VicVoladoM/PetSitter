@@ -3,7 +3,7 @@ PruebaTecnica
 
 Prueba Tecnica, Nodejs
 
-1.- Bajar el repositorio git clone https://github.com/VicVoladoM/PetSittersBNackEnd.git
+1.- Bajar el repositorio git clone https://github.com/VicVoladoM/PetSitter.git
 
 2.- Instalar Dependencias
 
@@ -35,3 +35,8 @@ npm start
 
 5.2 importar PetSitter.postman_collection.json a postman
 
+6.- cd PetSittersFrontEnd
+
+6.1 npm i
+
+6.2 npm start
