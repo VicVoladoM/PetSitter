@@ -10,6 +10,7 @@ api.get("/consultar-petsittersByState/:id", petSitterController.obtenerPetSitter
 api.post("/agregar-petsittertype", petSitterController.AgregarPetSitterType);
 api.get("/consultar-petsittersByType/:id", petSitterController.obtenerPetSitterByType);
 api.delete("/eliminar-pettype-forpetsitter/:id", petSitterController.eliminarPetTypeForPetSitter);
-api.get("/obener-petsitterdetails", petSitterController.obtenerPetSitterView);
+api.get("/obtener-petsitterdetails", petSitterController.obtenerPetSitterView);
+api.get("/obtener-petsitterdetail/:id", petSitterController.obtenerPettSitterById);
 
 module.exports = api;

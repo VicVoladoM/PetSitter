@@ -1,4 +1,4 @@
-import { Box, styled, Typography } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import Paper from "@mui/material/Paper";
@@ -24,34 +24,35 @@ export default function DetalleCuidador() {
     },
   }));
 
-  const [cuidadores, setCuidadores] = useState([]);
+  const {id} = useParams()
+
+  const [cuidadores, setCuidadores] = useState({});
   useEffect(() => {
     loadCuidadoresList();
   }, []);
 
   async function loadCuidadoresList() {
     try {
-      const response = await fetch(`http://localhost:8000/api/obener-petsitterdetails`, {
+      const response = await fetch(`http://localhost:8000/api/obtener-petsitterdetail/${id}`, {
         method: "GET",
       });
       const data = await response.json();
+      console.log("🚀 ~ file: DetalleCuidador.jsx:40 ~ loadCuidadoresList ~ response", response)
       console.log(data);
-      if (data.result.length) {
+      if (data) {
         console.log("Entro");
-        setCuidadores(data.result);
+        setCuidadores(data);
       }
     } catch (error) {
       console.log(error);
     }
   }
-  const params = useParams()
-  console.log(params)
 
   return (
     <Box sx={{ backgroundColor: "#EAF6FA", minHeight: "45vh" }}>
       <Container>
         <CustomBox>
-          <Review data={definitions} />
+          <Review data={cuidadores} />
         </CustomBox>
       </Container>
 

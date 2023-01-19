@@ -40,6 +40,10 @@ const obtenerPetSitterView = `SELECT p.id as cuidadorId,p.PhotoURL, p.name AS no
 FROM PetSitter p, City c, State s
 WHERE p.cityId = c.id AND c.stateId = s.id;`;
 
+const obtenerPettSitterById = `SELECT p.PhotoURL, p.id AS pettsiterID, p.name AS nombreCuidador, p.edad, p.rating, c.nombre AS nombreCity, c.id AS idCity, s.id AS stateId, s.nombre AS estado
+FROM PetSitter p, City c, State s
+WHERE p.cityId = c.id AND c.stateId = s.id AND p.id =  $id`;
+
 module.exports = {
     crearPetSitter, 
     editarPetSitter,
@@ -49,5 +53,6 @@ module.exports = {
     AgregarPetSitterType,
     obtenerPetSitterByType,
     eliminarPetTypeForPetSitter,
-    obtenerPetSitterView
+    obtenerPetSitterView,
+    obtenerPettSitterById
 }

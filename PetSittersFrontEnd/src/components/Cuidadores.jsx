@@ -26,11 +26,12 @@ export default function Lista() {
 
   async function loadCuidadoresList() {
     try {
-      const response = await fetch(`http://localhost:8000/api/obener-petsitterdetails`, {
+      const response = await fetch("http://localhost:8000/api/obtener-petsitterdetails", {
         method: "GET",
       });
       const data = await response.json();
       if (data.result.length) {
+        console.log(data.result)
         setCuidadores(data.result);
       }
     } catch (error) {

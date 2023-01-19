@@ -6,6 +6,7 @@ import { Box, Typography, styled } from "@mui/material";
 import List from "@mui/material/List";
 import Rating from "@mui/material/Rating";
 const Review = ({ data }) => {
+  console.log("🚀 ~ file: Review.jsx:9 ~ Review ~ data", data)
   const Title = styled(Typography)(({ theme }) => ({
     fontSize: "55px",
     color: "black",
@@ -16,7 +17,7 @@ const Review = ({ data }) => {
     <>
       <Box sx={{ flex: "1", marginTop: "10rem" }}>
         <img
-          src={data.url}
+          src={data.PhotoURL}
           alt="heroImg"
           style={{
             maxWidth: "100%",
@@ -33,10 +34,10 @@ const Review = ({ data }) => {
         </Title>
         <List sx={{ width: "100%", bgcolor: "background.paper" }}>
           <ListItem sx={{ ml: "4rem", m: "auto", pl: "3.5rem" }}>
-            <ListItemText primary="Nombre" secondary="Jan 9, 2014" />
-            <ListItemText primary="Edad" secondary="Jan 9, 2014" />
-            <ListItemText primary="Ubicacion" secondary="Jan 9, 2014" />
-            <Rating name="rating" size="small" value={5} readOnly />
+            <ListItemText primary="Nombre" secondary={data.nombreCuidador} />
+            <ListItemText primary="Edad" secondary={data.edad} />
+            <ListItemText primary="Ubicacion" secondary={data.ubicacion} />
+            <Rating name="rating" size="small" value={data.rating} readOnly />
           </ListItem>
         </List>
       </Box>

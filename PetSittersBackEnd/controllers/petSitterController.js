@@ -174,6 +174,30 @@ const obtenerPetSitterView = (req, res) => {
     });
 };
 
+const obtenerPettSitterById = (req, res) => {
+  const conn = connectBd();
+  let id = req.params.id;
+
+  if (id)
+    conn
+      .query(petSitterQueries.obtenerPettSitterById, {
+        bind: { id },
+        type: QueryTypes.SELECT,
+      })
+      .then((result) => {
+        res.status(200).send({ ...result[0] });
+      })
+      .catch((err) => {
+        res
+          .status(200)
+          .send({ errorCode: 404, errorMessage: err.original.message });
+      });
+  else
+    return res
+      .status(200)
+      .send({ errorCode: 403, errorMessage: "id is missing :(" });
+};
+
 module.exports = {
   crearPetSitter,
   editarPetSitter,
@@ -184,4 +208,5 @@ module.exports = {
   obtenerPetSitterByType,
   eliminarPetTypeForPetSitter,
   obtenerPetSitterView,
+  obtenerPettSitterById
 };
