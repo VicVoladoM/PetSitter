@@ -30,9 +30,7 @@ export default function Lista() {
         method: "GET",
       });
       const data = await response.json();
-      console.log(data);
       if (data.result.length) {
-        console.log("Entro");
         setCuidadores(data.result);
       }
     } catch (error) {
@@ -51,7 +49,7 @@ export default function Lista() {
         mt: "2rem",
       }}
     >
-      <Grid container spacing={2} key={cuidadores.cuidadorId}>
+      <Grid container spacing={2} key={cuidador.cuidadorId}>
         <Grid item >
           <ButtonBase sx={{ width: 128, height: 128 }}>
             <Img alt="complex" src={cuidador.PhotoURL} />
@@ -74,8 +72,8 @@ export default function Lista() {
               <Button
                 variant="outlined"
                 component={Link}
-                to={"/detallecuidador"}
-              >
+                to={"/detallecuidador/"+cuidador.cuidadorId}              
+                >
                 ver mas
               </Button>
             </Grid>

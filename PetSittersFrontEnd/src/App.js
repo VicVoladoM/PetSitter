@@ -14,10 +14,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/cuidadores/:id" element={<Cuidadores />} />
         <Route path="/cuidadores" element={<Cuidadores />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
-        <Route path="/detallecuidador" element={<DetalleCuidador />} />
+        <Route path="/detallecuidador/:id" element={<DetalleCuidador />} />
         <Route path="*" element={<div>404 NOT FOUND</div>} />
       </Routes>
       <Footer />
