@@ -1,17 +1,23 @@
-import { Box, styled } from "@mui/material";
+import { Box, styled, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import Paper from "@mui/material/Paper";
 import { useState, useEffect } from "react";
 import Review from "./Review";
 import { useParams } from "react-router-dom";
+import PetCard from "./PetCard"
 
 export default function DetalleCuidador() {
   const [definitions] = useState({
     name: "Frank",
     url: "https://uvmbored.com/wp-content/uploads/2017/01/54-atxl.jpg",
   });
-
+  const Title = styled(Typography)(({ theme }) => ({
+    fontSize: "55px",
+    color: "black",
+    fontWeight: "bold",
+    padding: 0
+  }));
   const CustomBox = styled(Box)(({ theme }) => ({
     display: "flex",
     gap: theme.spacing(1),
@@ -56,10 +62,12 @@ export default function DetalleCuidador() {
         </CustomBox>
       </Container>
 
-      <Container align="center">
-        <CustomBox sx={{ paddingBottom: "3rem" }}>
-          <Box sx={{ flex: 1, textAlign: "center" }}>
-            <Paper elevation={5} sx={{ height: 400 }}></Paper>
+      <Container align="center" sx={{ paddingBottom: "3rem", alignItems:"center" }}>
+        <CustomBox sx={{ paddingBottom: "3rem", p:"auto" }}>
+          <Box sx={{ flex: 1, textAlign: "center"}}>
+            <Paper elevation={5} sx={{ height: 600 }}>
+              <PetCard></PetCard>
+            </Paper>
           </Box>
         </CustomBox>
 

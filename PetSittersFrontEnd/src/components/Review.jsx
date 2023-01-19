@@ -36,7 +36,7 @@ const Review = ({ data }) => {
           <ListItem sx={{ ml: "4rem", m: "auto", pl: "3.5rem" }}>
             <ListItemText primary="Nombre" secondary={data.nombreCuidador} />
             <ListItemText primary="Edad" secondary={data.edad} />
-            <ListItemText primary="Ubicacion" secondary={data.ubicacion} />
+            <ListItemText primary="Ubicacion" secondary={data.estado+" "+data.nombreCity} />
             <Rating name="rating" size="small" value={data.rating} readOnly />
           </ListItem>
         </List>
