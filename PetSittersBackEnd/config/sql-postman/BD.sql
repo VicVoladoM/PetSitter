@@ -73,6 +73,10 @@ VALUES( "Daniel", "Mendoza", "danimen@gmail.com", 6671565342, "https://www.sprin
 INSERT INTO PetSitter (`name`, lastName, email, cellphone, photoURL, cityId,  edad,rating) 
 VALUES( "Oscar", "Lizarraga", "oscar123@gmail.com", 667155435, "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",1, 33,3);
 
+INSERT INTO PetSitter (`name`, lastName, email, cellphone, photoURL, cityId,  edad,rating) 
+VALUES( "memo", "luis", "memorias@gmail.com", 123525, "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",1, 43,3);
+
+
 INSERT INTO PetsType (description) VALUES ("Gatos");
 INSERT INTO PetsType (description) VALUES ("Perros");
 INSERT INTO PetsType (description) VALUES ("Conejo");
